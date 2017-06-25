@@ -1,6 +1,5 @@
 
 def choice1():
-    #print("choice 1")
     choosedName = input("Please enter the person's name:").strip().upper()
     if phonebook.get(choosedName) is None:
         print(choosedName+" not found")
@@ -9,7 +8,6 @@ def choice1():
     outputDic()
 
 def choice2():
-    #print("choice 2")
     inputName = input("Please enter the new person's name:").strip().upper()
     print("Please enter the phone number for ts eliot in this format: xxx.xxx.xxxx")
     inputNumber = input().strip().upper()
@@ -26,10 +24,26 @@ def choice3():
     outputDic()
 
 def choice4():
-    print("choice 4")
+    inputName = input("Please enter the person whose number you wish to change:").strip().upper()
+    if phonebook.get(inputName) is None:
+        print(inputName+" not found")
+        outputDic()
+        return
+    else:
+        print("The number for "+inputName+" is currently "+phonebook[inputName])
+    print("Please enter the new number for ernest hemingway in this format: xxx.xxx.xxxx")
+    inputNumber = input().strip().upper()
+    phonebook[inputName]=inputNumber
+    outputDic()
 
 def choice5():
-    print("choice 5")
+    inputNumber = input("Please enter the person's number in this format: xxx.xxx.xxxx   ").strip().upper()
+    for item in phonebook:
+        if phonebook[item] == inputNumber:
+            print(item+" "+phonebook[item])
+            outputDic()
+            return
+    print("This phone number is not in the list")
 
 def outputDic():
     print('''*********************************************
@@ -41,10 +55,6 @@ Thank you for using the phonebook. Here are your contacts:''')
 if __name__ == "__main__":
     phonebook = {'BOB WIN':'021.888.8881','ALEX':'021.888.8882','LUNA HH':'021.888.8883',
                  'JAMES GJ':'021.888.8884','KING':'021.888.8885','HENRY':'021.888.8886'}
-    #for item in phonebook:
-    #    print item
-    #    print phonebook[item]
-
     print ("Welcome to the Python Phonebook")
     print ('''Main Menu
 1. Find a number
