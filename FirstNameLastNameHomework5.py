@@ -6,11 +6,11 @@ if __name__ == "__main__":
     #    print item
     #    print phonebook[item]
 
-    print "Welcome to the Python Phonebook"
-    print '''Main Menu
+    print ("Welcome to the Python Phonebook")
+    print ('''Main Menu
 1. Find a number
 2. Add a person
 3. Remove a person
-4. Change a person's number 5. Reverse lookup'''
+4. Change a person's number 5. Reverse lookup''')
 
 
