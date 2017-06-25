@@ -1,6 +1,12 @@
 
 def choice1():
     print("choice 1")
+    choosedName = raw_input("Please enter the person's name:").strip().upper()
+    if phonebook.get(choosedName) is None:
+        print(choosedName+" not found")
+    else:
+        print(choosedName+" "+phonebook[choosedName])
+    outputDic()
 
 def choice2():
     print("choice 2")
@@ -14,9 +20,17 @@ def choice4():
 def choice5():
     print("choice 5")
 
+def outputDic():
+    print('''*********************************************
+Thank you for using the phonebook. Here are your contacts:''')
+    for item in phonebook:
+        print(item+" "+phonebook[item])
+    print("  ")
+
+
 if __name__ == "__main__":
-    phonebook = {'BOB':'021888881','ALEX':'021888882','LUNA':'021888883',
-                 'JAMES':'021888884','KING':'021888885','HENRY':'021888886'}
+    phonebook = {'BOB WIN':'021.888.881','ALEX':'021.888.882','LUNA HH':'021.888.883',
+                 'JAMES GJ':'021.888.884','KING':'021.888.885','HENRY':'021.888.886'}
     #for item in phonebook:
     #    print item
     #    print phonebook[item]
